@@ -34,7 +34,6 @@ exports.getTour = catchAsync(async (req, res, next) => {
     'cross-origin-resource-policy',
     'cross-origin'
   );
-  console.log(res.headers);
 
   res.status(200).render('tour', {
     title: `${tour.name}`,
@@ -71,8 +70,6 @@ exports.getMyTours = catchAsync(async (req, res) => {
 
 exports.updateUserData = catchAsync(
   async (req, res, next) => {
-    console.log('UPDATING USER DATA: ', req.body);
-
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       {

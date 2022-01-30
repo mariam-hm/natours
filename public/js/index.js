@@ -29,7 +29,6 @@ const bookBtn = document.getElementById('book-tour');
 // }
 
 if (loginForm) {
-  console.log('LOGIN');
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('email').value;
@@ -41,7 +40,6 @@ if (loginForm) {
 }
 
 if (logOutBtn) {
-  console.log('LOGOUT');
   logOutBtn.addEventListener('click', logout);
 }
 
@@ -61,7 +59,6 @@ if (userDataForm) {
       'photo',
       document.getElementById('photo').files[0]
     );
-    console.log(form);
 
     updateSettings(form, 'data');
   });
@@ -98,9 +95,7 @@ if (userPasswordForm) {
 }
 
 if (bookBtn) {
-  console.log('BOOKING');
   bookBtn.addEventListener('click', (e) => {
-    console.log('ENTER BOOKBTN');
     e.target.textContent = 'Processing...';
     const { tourId } = e.target.dataset;
     bookTour(tourId);
